@@ -1,9 +1,12 @@
 package Kata.kyu8.removeDuplicateWords;
 
-public class RemoveDuplicateWords {
-    public static String removeDuplicateWords(String s) {
-        // TODO: 14.10.2019  
+import java.util.Arrays;
+import static java.util.stream.Collectors.joining;
 
-        return null;
+public class RemoveDuplicateWords {
+    public static String removeDuplicateWords(String str) {
+        return Arrays.stream(str.split("\\s+"))
+                .distinct()
+                .collect(joining(" "));
     }
 }
