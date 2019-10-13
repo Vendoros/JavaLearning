@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class Tests {
+public class SquareSumTests {
     @Test
     public void testBasic() {
         assertEquals(9, SquareSum.squareSum(new int[]{1, 2, 2}));
