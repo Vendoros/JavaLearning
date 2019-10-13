@@ -1,7 +1,7 @@
 package Kata.kyu8.basicSubclasses;
 
 public class God {
-    public static Human[] create(){
+    public static Human[] create() {
         Man adam = new Man("adam", 25, 100);
         Woman eve = new Woman("eve", 25, 100);
 
@@ -10,31 +10,31 @@ public class God {
     }
 }
 
-abstract class Human{
+abstract class Human {
     private String name;
     private int age;
 
-    public Human(String n, int a){
-        name = n;
-        age = a;
+    public Human(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 }
 
-class Man extends Human{
+class Man extends Human {
     private int strength;
 
-    public Man(String n, int a, int s){
-        super(n, a);
-        strength = s;
+    public Man(String name, int age, int strength) {
+        super(name, age);
+        this.strength = strength;
     }
 }
 
-class Woman extends Human{
+class Woman extends Human {
     private int love;
 
-    public Woman (String n, int a, int l){
-        super(n, a);
-        love = l;
+    public Woman(String name, int age, int love) {
+        super(name, age);
+        this.love = love;
     }
 }
 
