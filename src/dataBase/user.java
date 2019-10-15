@@ -7,12 +7,9 @@ class user {
     private int id;
     private String name;
     private sex sex;
-
-
     private static final AtomicInteger COUNTER = new AtomicInteger(1);
 
-
-    static void getInfo(user user) {
+    void getInfo(user user) {
         System.out.printf("ID:%3d %9s %6s\n", user.id, user.getName(), user.getSex());
     }
 
@@ -35,7 +32,7 @@ class user {
     }
 
     String getName() {
-        if (name == null){
+        if (name == null) {
             name = "Unnamed";
         }
         return name;
@@ -52,14 +49,12 @@ class user {
     user(String name) {
         this.id = COUNTER.getAndIncrement();
         this.name = name;
-
     }
 
     user(String name, sex sex) {
         this.id = COUNTER.getAndIncrement();
         this.name = name;
         this.sex = sex;
-
     }
 
 }

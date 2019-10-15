@@ -1,8 +1,9 @@
 package dataBase;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class dataBase {
-
-
     public static void main(String... args) {
 
         user user1 = new user();
@@ -13,10 +14,14 @@ public class dataBase {
         user3.setSex(sex.MALE);
         user user4 = new user();
 
+        ArrayList<user> arr = new ArrayList<user>();
+        arr.add(user1);
+        arr.add(user2);
+        arr.add(user3);
+        arr.add(user4);
 
-        user.getInfo(user1);
-        user.getInfo(user2);
-        user.getInfo(user3);
-        user.getInfo(user4);
+        for (user user : arr){
+            new user().getInfo(user);
+        }
     }
 }
