@@ -33,7 +33,7 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;//если экземпляр класса равен экземпляру обьекта о вернуть true
-        if (o == null || getClass() != o.getClass()) return false;//если обьекта о пуст или тип обьекта не равен экземпляру обьекта о вернуть false
+        if (o == null || getClass() != o.getClass()) return false;//если обьект о пуст или тип обьекта не равен экземпляру обьекта о вернуть false
         User user = (User) o; //иначе, создаем экземпляр обьекта user и приводим тип обьекта о к виду user
         return age == user.age && // возвращем age из экземпляра обьекта user
                 Objects.equals(name, user.name) &&// сравниваем name данного класса с name экземпляра класса user

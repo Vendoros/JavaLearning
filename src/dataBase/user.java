@@ -13,7 +13,6 @@ class user {
         System.out.printf("ID:%3d %9s %6s\n", user.id, user.getName(), user.getSex());
     }
 
-
     String getSex() {
         try {
             return sex.toString();
@@ -21,10 +20,6 @@ class user {
             sex = sex.UNDEFINED;
             return sex.toString();
         }
-    }
-
-    void setSex(sex sex) {
-        this.sex = sex;
     }
 
     int getId() {
@@ -38,10 +33,15 @@ class user {
         return name;
     }
 
+    void setSex(sex sex) {
+        this.sex = sex;
+    }
+
     void setName(String name) {
         this.name = name;
     }
 
+    //constructors
     user() {
         this.id = COUNTER.getAndIncrement();
     }
