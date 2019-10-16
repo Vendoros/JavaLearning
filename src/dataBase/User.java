@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-//@SuppressWarnings("ALL")
+@SuppressWarnings({"unused"})
 abstract class User {
 
     private int id;
@@ -16,51 +16,53 @@ abstract class User {
     private static Map<Integer, jUnitTest.User> allUsers= new HashMap<>();//мапа для хранения пользователей
 
 
-    String getEmail(){
+    private String getEmail(){
         return email;
     }
 
-    String getPhone(){
+    private String getPhone(){
         return phone;
     }
 
-    void getInfo() {
+     void getInfo() {
         System.out.printf("ID:%3d %9s %6s %18s %19s\n", this.id, this.getName(), this.getSex(), this.email, this.phone);
     }
 
-    String getSex() {
+    private String getSex() {
         try {
             return sex.toString();
         } catch (NullPointerException e) {
-            sex = sex.UNDEFINED;
+            sex = Sex.UNDEFINED;
             return sex.toString();
         }
     }
 
-    int getId() {
+    private int getId() {
         return id;
     }
 
-    String getName() {
+    private String getName() {
         if (name == null) {
             name = "Unnamed";
         }
         return name;
     }
 
-    void setEmail(){
-        // TODO: 16.10.2019 проверка мыла на валидность
+    protected void setEmail(String email){
+        // TODO: 16.10.2019 проверка email на валидность
+        this.email = email;
     }
 
-    void setPhone(){
-        // TODO: 16.10.2019 проверка ноомера телефона
+    protected void setPhone(String phone){
+        // TODO: 16.10.2019 проверка phone на валидность
+        this.phone = phone;
     }
 
-    void setSex(Sex sex) {
+    protected void setSex(Sex sex) {
         this.sex = sex;
     }
 
-    void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
