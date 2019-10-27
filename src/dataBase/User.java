@@ -1,10 +1,12 @@
 package dataBase;
 
+import org.jetbrains.annotations.Contract;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@SuppressWarnings({"unused"})
+//@SuppressWarnings({"unused"})
 abstract class User {
 
     private int id;
@@ -13,18 +15,18 @@ abstract class User {
     private String email;
     private String phone;
     private static final AtomicInteger COUNTER = new AtomicInteger(1);
-    private static Map<Integer, jUnitTest.User> allUsers= new HashMap<>();//мапа для хранения пользователей
+    private static Map<Integer, jUnitTest.User> allUsers = new HashMap<>();//мапа для хранения пользователей
 
 
-    private String getEmail(){
+    private String getEmail() {
         return email;
     }
 
-    private String getPhone(){
+    private String getPhone() {
         return phone;
     }
 
-     void getInfo() {
+    void getInfo() {
         System.out.printf("ID:%3d %9s %6s %18s %19s\n", this.id, this.getName(), this.getSex(), this.email, this.phone);
     }
 
@@ -48,12 +50,12 @@ abstract class User {
         return name;
     }
 
-    protected void setEmail(String email){
+    protected void setEmail(String email) {
         // TODO: 16.10.2019 проверка email на валидность
         this.email = email;
     }
 
-    protected void setPhone(String phone){
+    protected void setPhone(String phone) {
         // TODO: 16.10.2019 проверка phone на валидность
         this.phone = phone;
     }
@@ -82,14 +84,14 @@ abstract class User {
         this.sex = sex;
     }
 
-    User(String name, Sex sex, String email){
+    User(String name, Sex sex, String email) {
         this.id = COUNTER.getAndIncrement();
         this.name = name;
         this.sex = sex;
         this.email = email;
     }
 
-    User(String name, Sex sex, String email, String phone){
+    User(String name, Sex sex, String email, String phone) {
         this.id = COUNTER.getAndIncrement();
         this.name = name;
         this.sex = sex;

@@ -8,6 +8,5 @@ public class dataBase {
         tr1.getInfo();
         Trader tr2 = new Trader();
         tr2.getInfo();
-
     }
 }
