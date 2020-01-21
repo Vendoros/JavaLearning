@@ -1,12 +1,10 @@
 package dataBase;
 
-import org.jetbrains.annotations.Contract;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-//@SuppressWarnings({"unused"})
+@SuppressWarnings({"unused"})
 abstract class User {
 
     private int id;
